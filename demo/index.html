@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <title></title>
+    
+    <link rel="stylesheet" type="text/css" href="default.css" id="default" />
+
+</head>
+
+<body>
+
+<p><button class="default">Set to default</button></p>
+<p><button class="red">Set to red</button></p>
+<p><button class="blue">Set to blue</button></p>
+
+</body>
+</html>
+<script src="jquery-1.11.3.js"></script>
+<script>
+$("document").ready(function() {
+	
+	// theme toggle
+	$("button.default").click(function() {
+		$("head").append('<link rel="stylesheet" type="text/css" href="default.css" id="default" />');
+		$("link").remove("#blue, #red");
+	});
+	
+	$("button.red").click(function() {
+		$("head").append('<link rel="stylesheet" type="text/css" href="red.css" id="red" />');
+		$("link").remove("#default, #blue");
+	});
+	
+	$("button.blue").click(function() {
+		$("head").append('<link rel="stylesheet" type="text/css" href="blue.css" id="blue" />');
+		$("link").remove("#default, #red");
+	});
+	// endOf theme toggle
+
+});
+</script>
